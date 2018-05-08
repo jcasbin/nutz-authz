@@ -1,4 +1,4 @@
-jcasbin-nutz-plugin
+jcasbin-nutz-plugin [![Build Status](https://travis-ci.org/jcasbin/jcasbin-nutz-plugin.svg?branch=master)](https://travis-ci.org/jcasbin/jcasbin-nutz-plugin) [![Coverage Status](https://coveralls.io/repos/github/jcasbin/jcasbin-nutz-plugin/badge.svg?branch=master)](https://coveralls.io/github/jcasbin/jcasbin-nutz-plugin?branch=master)
 ======
 
 jcasbin-nutz-plugin is an authorization middleware for [Nutz](https://nutzam.com/), it's based on [https://github.com/casbin/jcasbin](https://github.com/casbin/jcasbin). It is developed under the latest Nutz ``1.r.65`` and Java ``8``.
@@ -18,7 +18,7 @@ This project itself is a working Nutz project that integrates with jCasbin. The 
 
 ```java
 @Filters({@By(type=JCasbinAuthzFilter.class), @By(type=HttpBasicAuthnFilter.class)})
-public class DemoModule {
+public class MainModule {
     ...
 }
 ```
