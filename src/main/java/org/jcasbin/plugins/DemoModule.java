@@ -16,10 +16,11 @@ package org.jcasbin.plugins;
 
 import org.nutz.mvc.annotation.*;
 
+@Filters({@By(type=JCasbinAuthzFilter.class), @By(type=HttpBasicAuthnFilter.class)})
 public class DemoModule {
-    @At("/hello")
+    @At("/*")
     @Ok("jsp:jsp.hello")
-    public String doHello() {
-        return "Hello Nutz";
+    public String index() {
+        return "OK";
     }
 }
