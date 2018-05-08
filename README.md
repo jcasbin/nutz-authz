@@ -23,6 +23,10 @@ public class MainModule {
 }
 ```
 
+## Tutorials
+
+- [比Shiro更简单的Nutz权限管理：与jCasbin权限管理框架进行整合](https://nutz.cn/yvr/t/7v1m8jh2qejo7qu5460m2qgmul)
+
 ## Getting Help
 
 - [jCasbin](https://github.com/casbin/jcasbin)
