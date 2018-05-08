@@ -19,8 +19,8 @@ import org.nutz.mvc.annotation.*;
 @Filters({@By(type=JCasbinAuthzFilter.class), @By(type=HttpBasicAuthnFilter.class)})
 public class DemoModule {
     @At("/*")
-    @Ok("jsp:jsp.hello")
+    @Ok("json")
     public String index() {
-        return "OK";
+        return "200 OK";
     }
 }
