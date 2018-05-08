@@ -1,20 +1,22 @@
 jcasbin-nutz-plugin [![Build Status](https://travis-ci.org/jcasbin/jcasbin-nutz-plugin.svg?branch=master)](https://travis-ci.org/jcasbin/jcasbin-nutz-plugin) [![Coverage Status](https://coveralls.io/repos/github/jcasbin/jcasbin-nutz-plugin/badge.svg?branch=master)](https://coveralls.io/github/jcasbin/jcasbin-nutz-plugin?branch=master)
 ======
 
-jcasbin-nutz-plugin is an authorization middleware for [Nutz](https://nutzam.com/), it's based on [https://github.com/casbin/jcasbin](https://github.com/casbin/jcasbin). It is developed under the latest Nutz ``1.r.65`` and Java ``8``.
+[(For English version)](https://github.com/jcasbin/jcasbin-nutz-plugin/blob/master/README_EN.md)
 
-## Installation
+jcasbin-nutz-plugin是专门为Java Web框架[Nutz](https://nutzam.com/)打造的权限管理插件, 基于[https://github.com/casbin/jcasbin](https://github.com/casbin/jcasbin)技术实现。基于最新的Nutz ``1.r.65``和Java ``8``版本进行开发。
+
+## 安装
 
     git clone https://github.com/jcasbin/jcasbin-nutz-plugin
 
-## Simple Example
+## 一个简单例子
 
-This project itself is a working Nutz project that integrates with jCasbin. The steps to use jCasbin in your own Nutz project are:
+本项目自身就是一个Nutz项目，演示了如何与jCasbin权限框架集成。如果你要在自己的Nutz项目里使用jCasbin进行权限管理，可以参考如下步骤：
 
-1. Copy the [JCasbinAuthzFilter](https://github.com/jcasbin/jcasbin-nutz-plugin/blob/master/src/main/java/org/jcasbin/plugins/JCasbinAuthzFilter.java) class to your own project.
-2. Copy [authz_model.conf](https://github.com/jcasbin/jcasbin-nutz-plugin/blob/master/examples/authz_model.conf) and [authz_policy.csv](https://github.com/jcasbin/jcasbin-nutz-plugin/blob/master/examples/authz_policy.csv) to your project. You can modify them to your own jCasbin model and policy (or loading policy from DB), see [Model persistence](https://github.com/casbin/casbin/wiki/Model-persistence) and [Policy persistence](https://github.com/casbin/casbin/wiki/Policy-persistence).
-2. Replace the [HttpBasicAuthnFilter](https://github.com/jcasbin/jcasbin-nutz-plugin/blob/master/src/main/java/org/jcasbin/plugins/HttpBasicAuthnFilter.java) class (which provides [HTTP basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)) with your own authentication like OAuth, Apache Shiro, Spring Security, etc. Rewrite ``JCasbinAuthzFilter``'s [String getUser(HttpServletRequest request)](https://github.com/jcasbin/jcasbin-nutz-plugin/blob/master/src/main/java/org/jcasbin/plugins/JCasbinAuthzFilter.java#L42-L56) method to make sure jCasbin can get the authenticated user name.
-3. Make sure the ``JCasbinAuthzFilter`` interceptor is loaded, so it can filter all your requests. To do this, you can use the following code in your ``MainModule`` class:
+1. 把这个类：[JCasbinAuthzFilter](https://github.com/jcasbin/jcasbin-nutz-plugin/blob/master/src/main/java/org/jcasbin/plugins/JCasbinAuthzFilter.java)复制到你自己的项目里；
+2. 把jCasbin的模型文件：[authz_model.conf](https://github.com/jcasbin/jcasbin-nutz-plugin/blob/master/examples/authz_model.conf)和策略文件：[authz_policy.csv](https://github.com/jcasbin/jcasbin-nutz-plugin/blob/master/examples/authz_policy.csv)复制到你自己的项目里。你可以按自己需求这几个文件（或者直接从数据库读取策略），详情请参考：[如何读写jCasbin模型](https://github.com/casbin/casbin/wiki/Model-persistence)以及[如何读写jCasbin策略](https://github.com/casbin/casbin/wiki/Policy-persistence)；
+3. 把这个类：[HttpBasicAuthnFilter](https://github.com/jcasbin/jcasbin-nutz-plugin/blob/master/src/main/java/org/jcasbin/plugins/HttpBasicAuthnFilter.java)（实现了[HTTP basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)）替换成你自己的身份认证机制（用户登录），比如OAuth、Apache Shiro、Spring Security等。重写``JCasbinAuthzFilter``里的这个方法：[String getUser(HttpServletRequest request)](https://github.com/jcasbin/jcasbin-nutz-plugin/blob/master/src/main/java/org/jcasbin/plugins/JCasbinAuthzFilter.java#L42-L56)来保证jCasbin能够得到登录后的用户名；
+4. 保证``JCasbinAuthzFilter``过滤器被加载, 使其可以过滤所有请求。可以参考下面的例子对``MainModule``类进行修改：
 
 ```java
 @Filters({@By(type=JCasbinAuthzFilter.class), @By(type=HttpBasicAuthnFilter.class)})
@@ -23,14 +25,14 @@ public class MainModule {
 }
 ```
 
-## Tutorials
+## 教程
 
 - [比Shiro更简单的Nutz权限管理：与jCasbin权限管理框架进行整合](https://nutz.cn/yvr/t/7v1m8jh2qejo7qu5460m2qgmul)
 
-## Getting Help
+## 帮助
 
 - [jCasbin](https://github.com/casbin/jcasbin)
 
-## License
+## 协议
 
-This project is under Apache 2.0 License. See the [LICENSE](LICENSE) file for the full license text.
+本软件采用``Apache 2.0``授权协议开源，请点击[LICENSE](LICENSE)查看完整授权协议。
