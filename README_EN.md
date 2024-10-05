@@ -1,11 +1,18 @@
-jcasbin-nutz-plugin [![Build Status](https://travis-ci.org/jcasbin/jcasbin-nutz-plugin.svg?branch=master)](https://travis-ci.org/jcasbin/jcasbin-nutz-plugin) [![Coverage Status](https://coveralls.io/repos/github/jcasbin/jcasbin-nutz-plugin/badge.svg?branch=master)](https://coveralls.io/github/jcasbin/jcasbin-nutz-plugin?branch=master)
-======
+# jcasbin-nutz-plugin
+[![build](https://github.com/jcasbin/jcasbin-nutz-plugin/actions/workflows/maven-ci.yml/badge.svg)](https://github.com/jcasbin/jcasbin-nutz-plugin/actions/workflows/maven-ci.yml)
+[![Maven Central](https://img.shields.io/maven-central/v/org.casbin/jcasbin-nutz-plugin.svg)](https://central.sonatype.com/artifact/org.casbin/jcasbin-nutz-plugin)
 
 jcasbin-nutz-plugin is an authorization middleware for [Nutz](https://nutzam.com/), it's based on [https://github.com/casbin/jcasbin](https://github.com/casbin/jcasbin). It is developed under the latest Nutz ``1.r.65`` and Java ``8``.
 
 ## Installation
 
-    git clone https://github.com/jcasbin/jcasbin-nutz-plugin
+```xml
+<dependency>
+    <groupId>org.casbin</groupId>
+    <artifactId>jcasbin-nutz-plugin</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
 
 ## Simple Example
 

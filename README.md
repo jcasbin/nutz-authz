@@ -1,5 +1,6 @@
-jcasbin-nutz-plugin [![Build Status](https://travis-ci.org/jcasbin/jcasbin-nutz-plugin.svg?branch=master)](https://travis-ci.org/jcasbin/jcasbin-nutz-plugin) [![Coverage Status](https://coveralls.io/repos/github/jcasbin/jcasbin-nutz-plugin/badge.svg?branch=master)](https://coveralls.io/github/jcasbin/jcasbin-nutz-plugin?branch=master)
-======
+# jcasbin-nutz-plugin
+[![build](https://github.com/jcasbin/jcasbin-nutz-plugin/actions/workflows/maven-ci.yml/badge.svg)](https://github.com/jcasbin/jcasbin-nutz-plugin/actions/workflows/maven-ci.yml)
+[![Maven Central](https://img.shields.io/maven-central/v/org.casbin/jcasbin-nutz-plugin.svg)](https://central.sonatype.com/artifact/org.casbin/jcasbin-nutz-plugin)
 
 [(For English version)](https://github.com/jcasbin/jcasbin-nutz-plugin/blob/master/README_EN.md)
 
@@ -7,7 +8,13 @@ jcasbin-nutz-plugin是专门为Java Web框架[Nutz](https://nutzam.com/)打造�
 
 ## 安装
 
-    git clone https://github.com/jcasbin/jcasbin-nutz-plugin
+```xml
+<dependency>
+    <groupId>org.casbin</groupId>
+    <artifactId>jcasbin-nutz-plugin</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
 
 ## 一个简单例子
 
